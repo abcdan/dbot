@@ -127,12 +127,6 @@ bot.on("message", message => {
         let cmd = args[0].toLowerCase(); // set the first word as the command in lowercase just in case
         args.shift(); // delete the first word from the args
         if(commands[cmd] === undefined) {
-            var found = false
-            for(command in aliases) {
-                if(aliases[command].indexOf(cmd) !== -1 && found === false) {
-                    commands[command].run(message, args).catch(e => {cmderr(e); message.reply("an error occured when executing your command...bot owner has been informed")})
-                    found = true
-                }
             }
             /* Uncomment if you want to respond on unknown commands
             if(found === false) {
@@ -150,7 +144,7 @@ bot.on("message", message => {
             }
         }
     }
-})
+)
 
 function cmderr(e) {
     console.error("Error in a command caught")
