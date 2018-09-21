@@ -132,7 +132,7 @@ bot.on("message", message => {
                 if(aliases[command].indexOf(cmd) !== -1 && found === false) {
                     commands[command].run(message, args).catch(e => {cmderr(e); message.reply("an error occured when executing your command...bot owner has been informed")})
                     found = true
-                }}
+                }
             }
             /* Uncomment if you want to respond on unknown commands
             if(found === false) {
@@ -150,7 +150,7 @@ bot.on("message", message => {
             }
         }
     }
-)
+})
 
 function cmderr(e) {
     console.error("Error in a command caught")
